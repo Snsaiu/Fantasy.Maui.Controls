@@ -5,10 +5,10 @@
              x:Class="Fantasy.Maui.Controls.TabHeader">
 
     <VerticalStackLayout Margin="0,12">
-        <VerticalStackLayout.GestureRecognizers>
-            <TapGestureRecognizer Tapped="ArrawImageClickEvent"/>
-        </VerticalStackLayout.GestureRecognizers>
         <Grid  Margin="22,0">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ArrawImageClickEvent"/>
+            </Grid.GestureRecognizers>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="50"/>

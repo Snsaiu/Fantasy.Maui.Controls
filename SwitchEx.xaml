@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="cv"
+             x:Class="Fantasy.Maui.Controls.SwitchEx">
+
+    <Grid x:Name="maingrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border  
+            x:Name="border"
+           Margin="0,0,5,0"
+            Grid.ColumnSpan="2"
+            StrokeThickness="2"
+            Stroke="white"
+            WidthRequest="40"
+            Padding="4,3"
+        >
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ThumbChangedEvent"/>
+            </Border.GestureRecognizers>
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="50"/>
+            </Border.StrokeShape>
+
+            <Ellipse
+                    x:Name="thumb"
+                    HeightRequest="15"
+                    WidthRequest="15"
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Fill="white">
+            </Ellipse>
+
+            
+    </Border>
+        <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="{Binding Source={x:Reference cv},Path=Text}" 
+               FontSize="{Binding Source={x:Reference cv},Path=TextSize}" Grid.Column="2" VerticalTextAlignment="Center"
+               TextColor="{Binding Source={x:Reference cv},Path=TextColor}"></Label>
+    </Grid>
+
+</ContentView>

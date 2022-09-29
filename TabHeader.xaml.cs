@@ -12,6 +12,7 @@ public partial class TabHeader : ContentView
 		InitializeComponent();
 		this.state=ArrowState.Close;
         this.line.ScaleXTo(0);
+        this.contentLayout.ScaleYTo(0);
 
     }
 

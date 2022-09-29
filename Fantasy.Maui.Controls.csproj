@@ -28,6 +28,7 @@
 	<ItemGroup>
 	  <Folder Include="Resources\" />
 	  <Folder Include="Resources\Images\" />
+	  <Folder Include="Animation\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiImage Include="Resources\Images\arrawup.png" />
@@ -38,6 +39,9 @@
 	<ItemGroup>
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="GridDataCell.xaml">
 	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="SwitchEx.xaml">
+	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="TabControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
