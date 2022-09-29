@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fantasy.Maui.Controls.GridDataCell">
+
+    <Grid x:Name="mainGrid">
+
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="auto"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+
+        
+        <BoxView  x:Name="up" Grid.ColumnSpan="3"></BoxView>
+        <BoxView x:Name="left" Grid.Column="0" Grid.RowSpan="3"/>
+        <BoxView x:Name="right" Grid.Column="2" Grid.RowSpan="3"/>
+        <BoxView x:Name="bottom" Grid.Row="2" Grid.ColumnSpan="3"/>
+        <VerticalStackLayout  HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" x:Name="content">
+        </VerticalStackLayout>
+    </Grid>
+</ContentView>
+

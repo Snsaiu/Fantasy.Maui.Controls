@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            
+             x:Class="Fantasy.Maui.Controls.TabHeader">
+
+    <VerticalStackLayout Margin="0,12">
+        <VerticalStackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="ArrawImageClickEvent"/>
+        </VerticalStackLayout.GestureRecognizers>
+        <Grid  Margin="22,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.ColumnSpan="2" Source="tabheaderbg.png"  HeightRequest="50"/>
+            <Label HorizontalTextAlignment="Center" x:Name="titleLabel" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="White" FontSize="20" Grid.ColumnSpan="2" ></Label>
+            <Image Grid.Column="1" x:Name="arrowImage" Source="arrawup.png" HorizontalOptions="Start" HeightRequest="20">
+            </Image>
+        </Grid>
+        <VerticalStackLayout x:Name="lineContainer"  IsVisible="false">
+            <BoxView HeightRequest="1" x:Name="line" Color="#57ffff" Margin="20,10" IsVisible="false"></BoxView>
+        </VerticalStackLayout>
+       
+        <VerticalStackLayout x:Name="contentLayout" IsVisible="false"></VerticalStackLayout>
+    </VerticalStackLayout>
+
+</ContentView>
