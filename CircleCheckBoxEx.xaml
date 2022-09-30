@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="cv"
+             x:Class="Fantasy.Maui.Controls.CircleCheckBoxEx">
+
+    <Grid ColumnDefinitions="auto,*">
+                 <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+        <Grid Grid.Column="0">
+   
+        <Ellipse 
+                 Fill="Transparent"
+                 WidthRequest="15"
+                 Stroke="White"
+                 HeightRequest="15">
+        </Ellipse>
+        <Ellipse x:Name="thumb" Stroke="transparent" Fill="white" WidthRequest="10"
+                 HeightRequest="10"
+                 ></Ellipse>
+           </Grid>
+        <Label Margin="10,0,0,0" Grid.Column="1" TextColor="White" FontSize="18" Text="{Binding Source={x:Reference cv},Path=Text}"></Label>
+    </Grid>
+</ContentView>
+
