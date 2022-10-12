@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="pg"
+             x:Class="Fantasy.Maui.Controls.Pagination">
+
+    <VerticalStackLayout>
+        <VerticalStackLayout.Resources>
+               <Style TargetType="ImageButton">
+                    <Setter Property="WidthRequest" Value="18"/>
+                    <Setter Property="HeightRequest" Value="18"/>
+                   <Setter Property="Aspect" Value="AspectFit"/>
+                   <Setter Property="HorizontalOptions" Value="Center"/>
+
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="TextColor" Value="White"></Setter>
+                     <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="VerticalTextAlignment" Value="Center"/>
+                    <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                </Style>
+
+        </VerticalStackLayout.Resources>
+        <Grid ColumnDefinitions="*,*,*,*,*" HorizontalOptions="Fill" Margin="20,20">
+     
+            <HorizontalStackLayout Grid.Column="0">
+                <Label Text="页数"></Label>
+                <Label Text="1" x:Name="currentPageLabel"></Label>
+                <Label Text="/"></Label>
+                <Label Text="0" x:Name="pageCountLabel"/>
+            </HorizontalStackLayout>
+            <ImageButton
+                Command="{Binding Source={x:Reference pg},Path=FirstPageCommand}"
+               
+                         CommandParameter="{Binding Source={x:Reference pg},Path=FirstPageCommandParamter}"
+                Margin="10,0,0,0" x:Name="firstPageBtn" Clicked="firstPageClickEvent" Source="firstpage.png" Grid.Column="1"></ImageButton>
+            <ImageButton Command="{Binding Source={x:Reference pg},Path=PreviewPageCommand}"
+                         CommandParameter="{Binding Source={x:Reference pg},Path=PreviewPageCommandParamter}"
+                         x:Name="previewPageBtn" Clicked="previewPageClickEvent" Source="previewpage.png" Grid.Column="2"></ImageButton>
+            <ImageButton
+                Clicked="nextPageClickEvent"
+                Command="{Binding Source={x:Reference pg},Path=NextPageCommand}"
+                         CommandParameter="{Binding Source={x:Reference pg},Path=NextPageCommandParamter}"
+                x:Name="nextPageBtn"  Source="nextpage.png" Grid.Column="3"></ImageButton>
+         
+             <ImageButton
+                 Command="{Binding Source={x:Reference pg},Path=TailPageCommand}"
+                         CommandParameter="{Binding Source={x:Reference pg},Path=TailPageCommandParamter}"
+                 x:Name="tailPageBtn" Clicked="tailPageClickEvent" Source="tailpage.png" Grid.Column="4"></ImageButton>
+        </Grid>
+        <Border  HorizontalOptions="Center" Background="transparent" Stroke="#4a6bbf" StrokeThickness="2">
+            <HorizontalStackLayout>
+                <Label Margin="10" Text="每页条数"></Label>
+                <BoxView  Color="#4a6bbf" WidthRequest="2"></BoxView>
+                <HorizontalStackLayout x:Name="changePageGrp">
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ChangePageSizeEvent"/>
+
+                    </HorizontalStackLayout.GestureRecognizers>
+
+                  <Label Margin="10" Text="5" x:Name="pagesizeLabel"></Label>
+                <Image Source="downtri.png" HeightRequest="18" Margin="10" WidthRequest="18"></Image>
+                </HorizontalStackLayout>
+   
+            </HorizontalStackLayout>
+
+        </Border>
+    </VerticalStackLayout>
+</ContentView>
+

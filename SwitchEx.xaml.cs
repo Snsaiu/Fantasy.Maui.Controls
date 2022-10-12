@@ -9,18 +9,20 @@ public partial class SwitchEx : ContentView
 	public SwitchEx()
 	{
 		InitializeComponent();
-        this.BindingContext = this;
+       // this.BindingContext = this;
 	}
 
 
     /// <summary>
-    /// check Ñ¡ÖÐÊôÐÔ
+    /// check Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public static BindableProperty CheckedProperty = BindableProperty.Create(
         "Checked",
         typeof(bool),
         typeof(SwitchEx),
         defaultValue: false,
+        defaultBindingMode:BindingMode.TwoWay,
+        
         propertyChanged: CheckedChanged);
 
     private static void CheckedChanged(BindableObject bindable, object oldvalue, object newvalue)
@@ -56,7 +58,7 @@ public partial class SwitchEx : ContentView
     }
 
     /// <summary>
-    /// Ñ¡ÖÐ×´Ì¬ÊÇfalseÊ±ºòµÄ±³¾°ÑÕÉ«
+    /// Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½falseÊ±ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½É«
     /// </summary>
     public static BindableProperty OffFillColorProperty = BindableProperty.Create(
         "OffFileColor",
@@ -73,7 +75,7 @@ public partial class SwitchEx : ContentView
 
 
     /// <summary>
-    /// check Ñ¡ÖÐµÄ±³¾°ÑÕÉ«
+    /// check Ñ¡ï¿½ÐµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½É«
     /// </summary>
     public static BindableProperty OnFillColorProperty = BindableProperty.Create(
         "OnFillColor",

@@ -17,6 +17,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <WarningLevel>4</WarningLevel>
+	</PropertyGroup>
 	<ItemGroup>
 	  <None Remove="Resources\" />
 	  <None Remove="Resources\Images\" />
@@ -24,6 +27,13 @@
 	  <None Remove="Resources\Images\dotnet_bot.svg" />
 	  <None Remove="Resources\Images\pagebg.png" />
 	  <None Remove="Resources\Images\tabheaderbg.png" />
+	  <None Remove="Resources\Images\firstpage.png" />
+	  <None Remove="Resources\Images\previewpage.png" />
+	  <None Remove="Resources\Images\nextpage.png" />
+	  <None Remove="Resources\Images\tailpage.png" />
+	  <None Remove="Resources\Images\downtri.png" />
+	  <None Remove="Microsoft.Maui.Dependencies" />
+	  <None Remove="Microsoft.Maui.Extensions" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Resources\" />
@@ -35,6 +45,11 @@
 	  <MauiImage Include="Resources\Images\dotnet_bot.svg" />
 	  <MauiImage Include="Resources\Images\pagebg.png" />
 	  <MauiImage Include="Resources\Images\tabheaderbg.png" />
+	  <MauiImage Include="Resources\Images\firstpage.png" />
+	  <MauiImage Include="Resources\Images\previewpage.png" />
+	  <MauiImage Include="Resources\Images\nextpage.png" />
+	  <MauiImage Include="Resources\Images\tailpage.png" />
+	  <MauiImage Include="Resources\Images\downtri.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="GridDataCell.xaml">
@@ -52,6 +67,9 @@
 	  <MauiXaml Update="CircleCheckBoxEx.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
+	  <MauiXaml Update="Pagination.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="TabControl.xaml.cs">
@@ -60,5 +78,9 @@
 	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="TabHeader.xaml.cs">
 	    <DependentUpon>TabHeader.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Maui.Dependencies" Version="6.0.541" />
+	  <PackageReference Include="Microsoft.Maui.Extensions" Version="6.0.541" />
 	</ItemGroup>
 </Project>

@@ -4,7 +4,7 @@
              x:Class="Fantasy.Maui.Controls.GridDataCell">
 
     <Grid x:Name="mainGrid">
-
+       
         <Grid.ColumnDefinitions>
            <ColumnDefinition Width="auto"/>
               <ColumnDefinition Width="*"/>

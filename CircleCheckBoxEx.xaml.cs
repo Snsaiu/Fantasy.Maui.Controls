@@ -40,6 +40,19 @@ public partial class CircleCheckBoxEx : ContentView
 	}
 
 
+	public static BindableProperty ValueProperty = BindableProperty.Create(
+		"Value",
+		typeof(object),
+		typeof(CircleCheckBoxEx),
+		defaultValue: null);
+	public object Value
+	{
+		get { return (object)GetValue(ValueProperty);}
+		set { SetValue(ValueProperty, value); }
+	}
+
+
+
     void TapGestureRecognizer_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
 		this.IsChecked = !this.IsChecked;
