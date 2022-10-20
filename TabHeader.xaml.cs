@@ -11,13 +11,17 @@ public partial class TabHeader : ContentView
 	{
 		InitializeComponent();
 		this.state=ArrowState.Close;
-        this.line.ScaleXTo(0);
-        this.contentLayout.ScaleYTo(0);
+        this.Loaded += (s, e) =>
+        {
+            this.line.ScaleXTo(0);
+            this.contentLayout.ScaleYTo(0);
+        };
+
 
     }
 
     public static BindableProperty ChildProperty =
-        BindableProperty.Create("Child", typeof(View), typeof(TabHeader), propertyChanged: childChanged);
+        BindableProperty.Create("Child", typeof(View), typeof(TabHeader), defaultValue:null, propertyChanged: childChanged);
 
     
 

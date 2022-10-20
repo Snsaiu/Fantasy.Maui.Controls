@@ -61,7 +61,7 @@ public partial class SwitchEx : ContentView
     /// ѡ��״̬��falseʱ��ı�����ɫ
     /// </summary>
     public static BindableProperty OffFillColorProperty = BindableProperty.Create(
-        "OffFileColor",
+        "OffFillColor",
         typeof(Color),
         typeof(SwitchEx),
         defaultValue: Colors.Transparent
