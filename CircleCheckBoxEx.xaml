@@ -20,7 +20,7 @@
                  HeightRequest="10"
                  ></Ellipse>
            </Grid>
-        <Label Margin="10,0,0,0" Grid.Column="1" TextColor="White" FontSize="18" Text="{Binding Source={x:Reference cv},Path=Text}"></Label>
+        <Label Margin="10,0,0,2" VerticalTextAlignment="Center" VerticalOptions="Center" Grid.Column="1" TextColor="White" FontSize="18" Text="{Binding Source={x:Reference cv},Path=Text}"></Label>
     </Grid>
 </ContentView>
 
