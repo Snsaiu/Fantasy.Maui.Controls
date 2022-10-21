@@ -17,12 +17,15 @@ public delegate void UpdateDataDelegate(PageModel pm);
 public delegate void PageChangedDeleate(PageModel pm);
 
 
+public delegate void ChangedPerPageSizeDelegate(PageModel pm);
+
 
 public partial class Pagination : ContentView
 {
 
     public event UpdateDataDelegate UpdateDataEvent;
     public event PageChangedDeleate PageChangedEvent;
+    public event ChangedPerPageSizeDelegate ChangedPerPageSizeEvent;
 
     #region fields
 
@@ -312,7 +315,7 @@ defaultValue: null
             this.currentPageLabel.Text = "1";
             int pagecount = (this.Count + this.PageSize - 1) / this.PageSize;
             this.pageCountLabel.Text = pagecount.ToString();
-            this.UpdateDataEvent?.Invoke(new PageModel { PageIndex=1,PageSize=this.PageSize});
+            this.ChangedPerPageSizeEvent?.Invoke(new PageModel { PageIndex=1,PageSize=this.PageSize});
         }
     }
 
